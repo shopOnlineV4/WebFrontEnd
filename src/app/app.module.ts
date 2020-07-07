@@ -10,13 +10,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { ShopComponent } from './components/shop/shop.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     MainpageComponent,
-    ShopComponent,
+    ShopComponent
+
 
   ],
   imports: [
