@@ -14,8 +14,6 @@ import { MainpageModule } from './components/mainpage/mainpage.module';
   declarations: [
     AppComponent,
     NotfoundComponent
-
-
   ],
   imports: [
     BrowserModule,

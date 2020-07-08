@@ -21,8 +21,14 @@ export class ProductsService {
 
   GetAllProduct(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl + this.modelName)
-    .pipe(catchError(CheckApiRequest.handleError));
+      .pipe(catchError(CheckApiRequest.handleError));
   }
 
-
+  ProductServiceById(id: string): Observable<Product> {
+    return this.http.get<Product>(this.baseUrl + this.modelName + "/" + id)
+      .pipe(catchError(CheckApiRequest.handleError));
+  }
 }
+
+
+

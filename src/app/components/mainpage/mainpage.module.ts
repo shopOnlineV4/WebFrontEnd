@@ -6,9 +6,9 @@ import { HomeComponent } from './home/home.component';
 import { MainpageRoutingModule } from './mainpage-routing.module';
 import { RouterModule } from '@angular/router';
 import { MainpageComponent } from './mainpage.component';
-import { ShopModule } from './shop/shop.module';
-
-
+import { ContactComponent } from './contact/contact.component';
+import { DetailProudctComponent } from './shop/detail-proudct/detail-proudct.component';
+import { ProductsComponent } from './shop/products/products.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +16,14 @@ import { ShopModule } from './shop/shop.module';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    ContactComponent,
+    ProductsComponent,
+    HomeComponent,
+    DetailProudctComponent
   ],
   imports: [
     CommonModule,
-    ShopModule,
-    MainpageRoutingModule,
+     MainpageRoutingModule,
     RouterModule
   ]
 })
