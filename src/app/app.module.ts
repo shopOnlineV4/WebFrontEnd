@@ -3,27 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { MainpageComponent } from './components/mainpage/mainpage.component';
-import { ShopComponent } from './components/shop/shop.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { MainpageModule } from './components/mainpage/mainpage.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainpageComponent,
-    ShopComponent
+    NotfoundComponent
 
 
   ],
   imports: [
     BrowserModule,
+    MainpageModule,
     AppRoutingModule,
     HttpClientModule
   ],

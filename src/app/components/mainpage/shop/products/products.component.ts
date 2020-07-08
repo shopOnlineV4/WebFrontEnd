@@ -3,11 +3,11 @@ import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
-  selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.less']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.less']
 })
-export class ShopComponent implements OnInit {
+export class ProductsComponent implements OnInit {
   products: Product[];
   constructor(private productService: ProductsService) { }
   ngOnInit(): void {

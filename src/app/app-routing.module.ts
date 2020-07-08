@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
-import { ShopComponent } from './components/shop/shop.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: MainpageComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path: 'shop',
-    component: ShopComponent
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch : 'full'
+    path: '**',
+    component: NotfoundComponent
   }
-
 ];
 
 @NgModule({
