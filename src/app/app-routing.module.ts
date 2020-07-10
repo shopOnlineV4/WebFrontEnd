@@ -13,11 +13,10 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'home',
-    loadChildren: () => MainpageModule
+    path: '',
+    loadChildren: () => import('./components/mainpage/mainpage.module').then((m) => m.MainpageModule)
   },
-
-  {
+   {
     path: '**',
     component: NotfoundComponent
   }

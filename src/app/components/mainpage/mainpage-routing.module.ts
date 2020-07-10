@@ -13,7 +13,7 @@ const router: Routes = [
     path: '',
     component: MainpageComponent,
     children: [{
-      path: 'home',
+      path: '',
       component: HomeComponent
     },
     {
@@ -21,19 +21,14 @@ const router: Routes = [
       component: ContactComponent
     },
     {
-      path: '',
-      redirectTo: 'home',
-      pathMatch: 'full'
-    },
-    {
       path: 'shop',
       children: [
         {
           path: '',
-          component : ProductsComponent
+          component: ProductsComponent
         },
         {
-          path:":id",
+          path: ":id",
           component: DetailProudctComponent
         }
       ]
@@ -45,7 +40,7 @@ const router: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(router)
+    RouterModule.forChild(router)
   ]
 })
 export class MainpageRoutingModule { }

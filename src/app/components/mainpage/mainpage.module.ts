@@ -9,6 +9,7 @@ import { MainpageComponent } from './mainpage.component';
 import { ContactComponent } from './contact/contact.component';
 import { DetailProudctComponent } from './shop/detail-proudct/detail-proudct.component';
 import { ProductsComponent } from './shop/products/products.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,10 @@ import { ProductsComponent } from './shop/products/products.component';
   imports: [
     CommonModule,
      MainpageRoutingModule,
-    RouterModule
+     FormsModule,
+     ReactiveFormsModule,
+    RouterModule,
+
   ]
 })
 export class MainpageModule { }

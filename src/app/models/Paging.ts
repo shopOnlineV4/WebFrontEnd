@@ -1,7 +1,7 @@
 export class Paging<T>{
-    index : number;
-    Size : number;
-     TotalPages : number;
-    TotalCount : number;
-    Items : T[];
-  }
+  index: number;
+  size: number;
+  totalPages: number;
+  totalCount: number;
+  items: T[];
+}

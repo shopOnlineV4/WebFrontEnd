@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { MainpageModule } from './components/mainpage/mainpage.module';
+
 
 
 
@@ -17,7 +18,6 @@ import { MainpageModule } from './components/mainpage/mainpage.module';
   ],
   imports: [
     BrowserModule,
-    MainpageModule,
     AppRoutingModule,
     HttpClientModule
   ],

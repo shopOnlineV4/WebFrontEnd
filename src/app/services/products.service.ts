@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../models/product';
+import { Product, ProductInfor } from '../models/product';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { CheckApiRequest } from '../common/CheckApiRequest';
@@ -11,7 +11,6 @@ import { CheckApiRequest } from '../common/CheckApiRequest';
 })
 export class ProductsService {
   Products: Product[];
-
   baseUrl: any;
   modelName: any;
   constructor(private http: HttpClient) {
@@ -24,8 +23,8 @@ export class ProductsService {
       .pipe(catchError(CheckApiRequest.handleError));
   }
 
-  ProductServiceById(id: string): Observable<Product> {
-    return this.http.get<Product>(this.baseUrl + this.modelName + "/" + id)
+  ProductServiceById(id: string): Observable<ProductInfor> {
+    return this.http.get<ProductInfor>(this.baseUrl + this.modelName + id)
       .pipe(catchError(CheckApiRequest.handleError));
   }
 }
