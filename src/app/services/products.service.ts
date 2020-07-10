@@ -27,6 +27,12 @@ export class ProductsService {
     return this.http.get<ProductInfor>(this.baseUrl + this.modelName + id)
       .pipe(catchError(CheckApiRequest.handleError));
   }
+
+
+  getRandom5Product(): Observable<Product[]>{
+      return this.http.get<Product[]>(this.baseUrl+this.modelName+"GetRandom8Proucts")
+      .pipe(catchError(CheckApiRequest.handleError));
+  }
 }
 
 

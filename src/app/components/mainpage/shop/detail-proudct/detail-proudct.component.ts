@@ -3,7 +3,7 @@ import { ProductsService } from 'src/app/services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/internal/operators/map';
 import { switchMap } from 'rxjs/operators';
-import { ProductInfor } from 'src/app/models/product';
+import { ProductInfor, Product } from 'src/app/models/product';
 import { Category } from 'src/app/models/category';
 import { Image } from 'src/app/models/image';
 import { TypeProduct } from 'src/app/models/typeProduct';
@@ -19,6 +19,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class DetailProudctComponent implements OnInit {
   product: ProductInfor;
+  products: Product[];
   category: Category;
   images: Image[];
   colors: Colors[];
@@ -28,7 +29,8 @@ export class DetailProudctComponent implements OnInit {
 
 
   constructor(private activeRouter: ActivatedRoute,
-    private productService: ProductsService, private formBuilder: FormBuilder) {
+    private productService: ProductsService,
+    private formBuilder: FormBuilder) {
     this.product = new ProductInfor;
     this.category = new Category;
     this.colors = [];
@@ -37,15 +39,11 @@ export class DetailProudctComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
-
     this.formTypeProduct = this.formBuilder.group(
       {
         colorId: new FormControl('1', [Validators.required]),
         sizeId: new FormControl('1', [Validators.required]),
         productId: new FormControl('', [Validators.required])
-
       }
     );
 
@@ -74,6 +72,9 @@ export class DetailProudctComponent implements OnInit {
         });
         this.formTypeProduct.patchValue({ sizeId: this.sizes.find(x => x).id })
       });
+    this.productService.getRandom5Product().subscribe((x: Product[]) => {
+      this.products = x;
+    });
   }
 
   GetColor(colorId: number): void {
@@ -87,6 +88,5 @@ export class DetailProudctComponent implements OnInit {
     typeProduct.sizeId = valueForm.get('sizeId').value;
     typeProduct.productId = valueForm.get('productId').value;
     console.log(typeProduct);
-
   }
 }
