@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img class="m-2" src="../../../favicon.ico" id="icon" alt="User Icon" />
+      </div>
+
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="userName" [(ngModel)]="userLogin.userName" placeholder="tài khoản" required>
+        <input type="text" id="password" class="fadeIn third" name="password"  [(ngModel)]="userLogin.password" placeholder="mật khẩu" required>
+        <small *ngIf="errors" class="fadeIn" class="text-center text-danger">{{errors}}</small>
+        <input type="submit" (click)="submitLogin()" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+    </div>
+  </div>
+</div>

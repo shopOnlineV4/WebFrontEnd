@@ -19,6 +19,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class DetailProudctComponent implements OnInit {
   product: ProductInfor;
+
   products: Product[];
   category: Category;
   images: Image[];
@@ -51,20 +52,22 @@ export class DetailProudctComponent implements OnInit {
     this.activeRouter.paramMap.pipe(
       map(params => params.get('id')),
       switchMap(id => this.productService.ProductServiceById(id)
-      )).subscribe((product: ProductInfor) => {
-        this.product = product;
-        this.category = product.category;
-        this.images = product.images;
+      )).subscribe((apiFetchProduct: ProductInfor) => {
+
+        this.product = apiFetchProduct;
+        debugger;
+        this.category = apiFetchProduct.category;
+        this.images = apiFetchProduct.images;
 
         this.formTypeProduct.patchValue({ productId: this.product.id });
 
-        product.typeProducts.forEach((item: TypeProduct) => {
+        apiFetchProduct.typeProducts.forEach((item: TypeProduct) => {
           this.colors.push(item.colorCode);
         });
         this.colors.filter((thing, i, arr) => {
           return arr.findIndex(t => t.id === thing.id) === i;
         });
-        product.typeProducts.forEach((item: TypeProduct) => {
+        apiFetchProduct.typeProducts.forEach((item: TypeProduct) => {
           this.sizes.push(item.size);
         });
         this.sizes.filter((thing, i, arr) => {
